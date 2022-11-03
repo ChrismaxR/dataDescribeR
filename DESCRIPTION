@@ -3,7 +3,7 @@ Type: Package
 Title: Build a data dictionary (incl. stats from {skimr})
 Version: 0.1.0
 Author: Christian van Gaalen
-Maintainer: ctmvangaalen@gmail.com
+Maintainer: Christian van Gaalen <ctmvangaalen@gmail.com>
 Description: Convert a loaded data set into a pivotted dataframe, 
     add 15 example values per column, add skimr statistics to the 
     set. Aid exporting of data description to Excel/csv, to communicate
