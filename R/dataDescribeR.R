@@ -1,27 +1,15 @@
-# Hello, world!
-#
-# This is an example function named 'hello'
-# which prints 'Hello, world!'.
-#
-# You can learn more about package authoring with RStudio at:
-#
-#   http://r-pkgs.had.co.nz/
-#
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Install Package:           'Cmd + Shift + B'
-#   Check Package:             'Cmd + Shift + E'
-#   Test Package:              'Cmd + Shift + T'
-
-# Import necessary functions from other packages
-usethis::use_package("dplyr",  "imports")
-usethis::use_package("tibble", "imports")
-usethis::use_package("tidyr",  "imports")
-usethis::use_package("skimr",  "imports")
-usethis::use_package("stringr",  "imports")
-
-
-# bespoke function to make a sort of data dictionary
+# A package to leverage a usefull bespoke function I use to describe data sets
+# with in greater detail.
+#' data_describer function
+#'
+#' @param data A dataframe you want to describe
+#'
+#' @return A dataframe
+#'
+#' @export
+#'
+#' @examples
+#' data_describer(mtdata)
 data_describer <- function(data) {
 
   # order the column names, so to reflect column order in source files
