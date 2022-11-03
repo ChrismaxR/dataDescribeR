@@ -16,5 +16,5 @@ A dataframe
 data_describer function
 }
 \examples{
-data_describer(mtdata)
+data_describer(tidyr::billboard)
 }
