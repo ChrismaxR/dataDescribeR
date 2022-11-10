@@ -4,10 +4,12 @@
 \alias{data_describer}
 \title{data_describer function}
 \usage{
-data_describer(data)
+data_describer(data, example_number)
 }
 \arguments{
 \item{data}{A dataframe you want to describe}
+
+\item{example_number}{The amount of example values you want to include in the output, must be a numeric input}
 }
 \value{
 A dataframe
@@ -16,5 +18,5 @@ A dataframe
 data_describer function
 }
 \examples{
-data_describer(tidyr::billboard)
+data_describer(data = tidyr::billboard, example_number = 3)
 }

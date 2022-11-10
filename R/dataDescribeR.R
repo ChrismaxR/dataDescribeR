@@ -3,14 +3,15 @@
 #' data_describer function
 #'
 #' @param data A dataframe you want to describe
+#' @param example_number The amount of example values you want to include in the output, must be a numeric input
 #'
 #' @return A dataframe
 #'
 #' @export
 #'
 #' @examples
-#' data_describer(tidyr::billboard)
-data_describer <- function(data) {
+#' data_describer(data = tidyr::billboard, example_number = 3)
+data_describer <- function(data, example_number) {
 
   # order the column names, so to reflect column order in source files
   ordered_cols <- names(data) |>
@@ -24,7 +25,7 @@ data_describer <- function(data) {
     tidyr::pivot_longer(cols = 1:ncol(data)) |>
     dplyr::filter(!is.na(value)) |>
     dplyr::group_by(name) |>
-    dplyr::sample_n(5, replace = T) |>
+    dplyr::sample_n(example_number, replace = T) |>
     dplyr::summarise(
       value = stringr::str_c(value, collapse = "; ")
     ) |>
