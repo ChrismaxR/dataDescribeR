@@ -32,8 +32,8 @@ data_describer <- function(data, example_number) {
     dplyr::mutate(
       name = factor(name, levels = ordered_cols)
     ) |>
-    dplyr::arrange(name) |>
     dplyr::full_join(skimr::skim(data), by = c("name" = "skim_variable")) |>
+    dplyr::arrange(name) |>
     dplyr::rename(
       "column_name" = 1,
       "example_values" = 2,
