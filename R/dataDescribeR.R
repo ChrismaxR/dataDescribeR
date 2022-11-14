@@ -33,7 +33,7 @@ data_describer <- function(data, example_number) {
       name = factor(name, levels = ordered_cols)
     ) |>
     dplyr::arrange(name) |>
-    dplyr::left_join(skimr::skim(data), by = c("name" = "skim_variable")) |>
+    dplyr::full_join(skimr::skim(data), by = c("name" = "skim_variable")) |>
     dplyr::rename(
       "column_name" = 1,
       "example_values" = 2,
